@@ -1,10 +1,10 @@
 services:
   - type: web
-    name: design-dropper-api
+    name: design-dropper-backend
     env: node
-    region: oregon
+    region: Singapore (Southeast Asia)
     plan: free
-    buildCommand: npm install && npm install -g dembrandt
+    buildCommand: npm install && npx playwright install chromium
     startCommand: node server.js
     envVars:
       - key: NODE_ENV
