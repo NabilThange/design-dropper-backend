@@ -27,6 +27,19 @@ app.use((req, res, next) => {
   next();
 });
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Design Dropper API',
+    version: '1.0.0',
+    endpoints: {
+      health: '/health',
+      extract: 'POST /api/extract'
+    },
+    docs: 'https://github.com/yourusername/design-dropper'
+  });
+});
+
 // Health check endpoint (for Render keep-alive)
 app.get('/health', (req, res) => {
   res.json({ 
